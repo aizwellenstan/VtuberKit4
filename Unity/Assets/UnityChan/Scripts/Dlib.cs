@@ -14,6 +14,7 @@ using System.Text;
     public class Dlib : MonoBehaviour
     {
 	public static Vector3 lookPos;
+	public static bool laugh;
         public float eye_close, eye_open, mouth_close, mouth_open;
 
         private Animator anim;
@@ -112,20 +113,26 @@ using System.Text;
             
             // do rotation, etc.
             // neck.rotation = Quaternion.Euler(-pitch, yaw, -roll) * neck_quat;
-            if (mdst > 0.33f){
+           // if (mdst > 0.33f){
+	    if (mdst > 0.32f){
                 anim.SetLayerWeight(1, 1f);
                 anim.CrossFade ("smile1@unitychan", 0.1f);
+		laugh = true;
             } else {
+		 laugh = false;
                 anim.SetLayerWeight(1, 1f);
                 anim.CrossFade ("default@unitychan", 0.1f);
                 // eye.SetBlendShapeWeight (6, eyeratio);
                 // eye_lid.SetBlendShapeWeight (6, eyeratio);
 
                 if (mouthratio > 70){
-                    eye.SetBlendShapeWeight (2, 100);
-                    eyebrow.SetBlendShapeWeight (2, 100);
-                    mouth.SetBlendShapeWeight (0, mouthratio);
+                   // eye.SetBlendShapeWeight (2, 100);
+                   // eyebrow.SetBlendShapeWeight (2, 100);
+                  //  mouth.SetBlendShapeWeight (0, mouthratio);
+		  	Debug.Log("(mouthratio > 70)");
+		   // laugh = true;
                 } else {
+			laugh = false;
                     //mouth.SetBlendShapeWeight (2, mouthratio);
                     //mouth.SetBlendShapeWeight (1, 80);
                 }

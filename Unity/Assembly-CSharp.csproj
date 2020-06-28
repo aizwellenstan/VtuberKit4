@@ -58,6 +58,7 @@
     <Compile Include="Assets\AniLipSync-live2d\Scripts\AnimMorphTarget.cs" />
     <Compile Include="Assets\AniLipSync-live2d\Scripts\LowLatencyLipSyncContext.cs" />
     <Compile Include="Assets\AniLipSync-live2d\Scripts\VisemeShapeClip.cs" />
+    <Compile Include="Assets\FaceTracking\FaceTracking.cs" />
     <Compile Include="Assets\Live2D\Cubism\Core\ArrayExtensionMethods.cs" />
     <Compile Include="Assets\Live2D\Cubism\Core\ComponentExtensionMethods.cs" />
     <Compile Include="Assets\Live2D\Cubism\Core\CubismCanvasInformation.cs" />
@@ -201,8 +202,11 @@
     <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSyncContextTextureFlip.cs" />
     <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSyncMicInput.cs" />
     <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSyncSequence.cs" />
+    <Compile Include="Assets\Scripts\BlendExpression.cs" />
     <Compile Include="Assets\Scripts\GazeController.cs" />
     <Compile Include="Assets\Scripts\GazeControllerDlib.cs" />
+    <Compile Include="Assets\Scripts\Laugh.cs" />
+    <Compile Include="Assets\Scripts\ParamAdjuster.cs" />
     <Compile Include="Assets\UnityChan\Scripts\AutoBlink.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\Dlib.cs" />
