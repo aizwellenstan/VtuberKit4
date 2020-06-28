@@ -1,0 +1,1 @@
+UnboundLocalError: local variable 'steady_pose' referenced before assignment
