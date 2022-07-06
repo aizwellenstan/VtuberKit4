@@ -87,11 +87,7 @@ def main():
         _, frame = cap.read()
         frame = cv2.flip(frame, 2)
         frame_count += 1
-        if args.connect and frame_count > 60: # send information to unity
-            msg = '%.4f %.4f %.4f %.4f %.4f %.4f %.4f %.4f'% \
-                  (roll, pitch, yaw, min_ear, mar, mdst, steady_pose[6], steady_pose[7])
-            s.send(bytes(msg, "utf-8"))
-
+        
         t = time.time()
 
         # Pose estimation by 3 steps:
@@ -160,6 +156,11 @@ def main():
                 min_ear = min(eye_aspect_ratio(marks[36:42]), eye_aspect_ratio(marks[42:48]))
                 mar = mouth_aspect_ration(marks[60:68])
                 mdst = mouth_distance(marks[60:68])/(facebox[2]-facebox[0])
+
+                if args.connect and frame_count > 60: # send information to unity
+                    msg = '%.4f %.4f %.4f %.4f %.4f %.4f %.4f %.4f'% \
+                        (roll, pitch, yaw, min_ear, mar, mdst, steady_pose[6], steady_pose[7])
+                    s.send(bytes(msg, "utf-8"))
             except:
                 print("err")
             
